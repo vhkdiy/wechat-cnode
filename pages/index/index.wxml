@@ -1,0 +1,44 @@
+<!--index.wxml-->
+<view class="container">
+  <!--header-->
+  <view class="navbar">
+    <navigator class="topic_tab topic_tab--active" url="#" open-type="">全部</navigator>
+    <navigator class="topic_tab" url="#" open-type="redirect">精华</navigator> 
+    <navigator class="topic_tab" url="#" open-type="redirect">分享</navigator> 
+    <navigator class="topic_tab" url="#" open-type="redirect">问答</navigator> 
+    <navigator class="topic_tab" url="#" open-type="redirect">招聘</navigator>    
+  </view>
+
+  <!--content-->
+  <scroll-view class="topic_list" scroll-y="true" style="height: 100vh" bindscrolltolower="lower" >
+      <view class="topic_list__item">
+        <view class="author">
+          <image src="https://avatars.githubusercontent.com/u/4279697?v=3&s=120" class="author__avatar"></image>
+
+          <view class="author__avatar_right">
+            <text class="author__name">hello</text>
+            <view class="item__create_time">
+              <text>2月前</text>
+              <text class="item__tag">#分享#</text>
+            </view>
+          </view>
+        </view> <!-- author -->
+
+        <view class="item__title">《一起学 Node.js》彻底重写完毕</view>
+
+        <view class="item__bar-info">
+          <view class="bar-info__cell">
+            <image class="bar-info__cell__icon" src="../../images/icon/visit.png"></image>
+            <text class="bar-info__cell__number">5000</text>
+          </view>
+          <view class="bar-info__cell">
+            <image class ="bar-info__cell__icon" src="../../images/icon/reply.png"></image>
+            <text class="bar-info__cell__number">220</text>
+          </view>
+          <view class="bar-info__cell bar-info__cell--last">
+            <text class="bar-info__cell__number">6小时前</text>
+          </view>          
+        </view> <!-- item__bar-info -->
+      </view> <!-- topic_list__item -->
+  </scroll-view>
+</view>

@@ -1,0 +1,32 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/my/index"
+  ],
+  "window":{
+    "backgroundTextStyle":"black",
+    "backgroundColor": "#ffffff",
+    "navigationBarBackgroundColor": "#000",
+    "navigationBarTitleText": "CNODE",
+    "navigationBarTextStyle":"white",
+    "enablePullDownRefresh": true
+  },
+  "tabBar": {
+    "color": "#272636",
+    "selectedColor": "#80bd01",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "white",
+    "list": [{
+      "pagePath": "pages/index/index",
+      "text": "首页",
+      "iconPath": "images/tabBar/list.png",
+      "selectedIconPath": "images/tabBar/list_hl.png"
+    }, {
+      "pagePath": "pages/my/index",
+      "text": "我的",
+      "iconPath": "images/tabBar/my.png",
+      "selectedIconPath": "images/tabBar/my_hl.png"
+    }]
+  }
+}
