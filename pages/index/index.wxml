@@ -11,34 +11,36 @@
 
   <!--content-->
   <scroll-view class="topic_list" scroll-y="true" style="height: 100vh" bindscrolltolower="lower" >
+    <block wx:for="{{topics}}" wx:key="id">
       <view class="topic_list__item">
         <view class="author">
-          <image src="https://avatars.githubusercontent.com/u/4279697?v=3&s=120" class="author__avatar"></image>
+          <image src="{{item.author.avatar_url}}" class="author__avatar"></image>
 
           <view class="author__avatar_right">
-            <text class="author__name">hello</text>
+            <text class="author__name">{{item.author.loginname}}</text>
             <view class="item__create_time">
-              <text>2月前</text>
+              <text>{{item.create_at}}</text>
               <text class="item__tag">#分享#</text>
             </view>
           </view>
         </view> <!-- author -->
 
-        <view class="item__title">《一起学 Node.js》彻底重写完毕</view>
+        <view class="item__title">{{item.title}}</view>
 
         <view class="item__bar-info">
           <view class="bar-info__cell">
             <image class="bar-info__cell__icon" src="../../images/icon/visit.png"></image>
-            <text class="bar-info__cell__number">5000</text>
+            <text class="bar-info__cell__number">{{item.visit_count}}</text>
           </view>
           <view class="bar-info__cell">
             <image class ="bar-info__cell__icon" src="../../images/icon/reply.png"></image>
-            <text class="bar-info__cell__number">220</text>
+            <text class="bar-info__cell__number">{{item.reply_count}}</text>
           </view>
           <view class="bar-info__cell bar-info__cell--last">
-            <text class="bar-info__cell__number">6小时前</text>
+            <text class="bar-info__cell__number">{{item.last_reply_at}}</text>
           </view>          
         </view> <!-- item__bar-info -->
       </view> <!-- topic_list__item -->
+    </block>
   </scroll-view>
 </view>

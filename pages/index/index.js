@@ -1,8 +1,10 @@
 const { getTopics, getTopicByID } = require('../../utils/api');
+const { getDateDiff } = require('../../utils/util.js');
 
 Page({
   data: {
-    title: '首页列表'
+    title: '首页列表',
+    topics: []
   },
   onLoad() {
     console.log('onload by topics');
@@ -13,12 +15,19 @@ Page({
     wx.request({
       url: getTopics(data),
       data: {},
-      method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
+      method: 'GET',
       header: {
         'Accept': 'application/json'
       },
-      success: function(res){
-        console.log(res);        
+      success: (res) => {
+        res.data.data.map(item => {
+          item.last_reply_at = getDateDiff(item.last_reply_at);
+          item.create_at = getDateDiff(item.create_at);
+          return item;
+        })
+        this.setData({
+          topics: res.data.data
+        })
       }
     })
   }
